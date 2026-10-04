@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "AI Help Desk Assistant",
+    "_postman_id": "9f0e93e8-0b87-4f35-8b0e-b8f37f4a2c31",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8081" },
+    { "key": "conversationId", "value": "tushar-demo-1" }
+  ],
+  "item": [
+    {
+      "name": "1 - Reindex knowledge base",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/api/v1/knowledge/reindex"
+      }
+    },
+    {
+      "name": "2 - Chat with RAG + memory + tools",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "ConversationId", "value": "{{conversationId}}" },
+          { "key": "Content-Type", "value": "text/plain" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "My VPN is not connecting and I keep getting authentication failures. My email is tushar@example.com. What should I do?"
+        },
+        "url": "{{baseUrl}}/api/v1/ai/chat"
+      }
+    },
+    {
+      "name": "3 - Continue same conversation",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "ConversationId", "value": "{{conversationId}}" },
+          { "key": "Content-Type", "value": "text/plain" }
+        ],
+        "body": { "mode": "raw", "raw": "Create a ticket for me with the same issue." },
+        "url": "{{baseUrl}}/api/v1/ai/chat"
+      }
+    },
+    {
+      "name": "4 - Structured ticket extraction",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "text/plain" }],
+        "body": {
+          "mode": "raw",
+          "raw": "VPN authentication keeps failing for my account. It affects my work and I cannot access internal systems. Email: tushar@example.com"
+        },
+        "url": "{{baseUrl}}/api/v1/ai/extract-ticket"
+      }
+    },
+    {
+      "name": "5 - Streaming",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "ConversationId", "value": "stream-demo-1" },
+          { "key": "Content-Type", "value": "text/plain" }
+        ],
+        "body": { "mode": "raw", "raw": "Explain the VPN troubleshooting process step by step." },
+        "url": "{{baseUrl}}/api/v1/ai/stream"
+      }
+    }
+  ]
+}

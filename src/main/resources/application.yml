@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: ai-helpdesk-assistant
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/helpdesk_ai
+    username: helpdesk
+    password: helpdesk
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: ${OPENAI_CHAT_MODEL:gpt-4o-mini}
+          temperature: 0.2
+          max-tokens: 800
+      embedding:
+        options:
+          model: ${OPENAI_EMBEDDING_MODEL:text-embedding-3-small}
+
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        max-document-batch-size: 100
+
+  mail:
+    host: localhost
+    port: 1025
+    protocol: smtp
+    test-connection: false
+
+server:
+  port: 8081
+
+app:
+  support-email: support@local.helpdesk
+  rag:
+    source-filter: "knowledgeBase == 'helpdesk'"
+    similarity-threshold: 0.45
+    top-k: 5
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
+    com.tusharmall.helpdesk: INFO
