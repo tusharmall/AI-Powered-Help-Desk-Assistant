@@ -20,6 +20,13 @@ A resume-oriented Java/Spring Boot project that demonstrates the main Spring AI 
 
 Spring AI 1.1.8 is the latest 1.x release line; the Spring AI release notes show the 1.1.x line as the Boot 3.x-compatible branch, while Spring AI 2.0 is a Boot 4.x line. This project intentionally stays on the 1.1.x line so the code remains close to the Spring Boot 3.x ecosystem used in the rest of your resume.
 
+
+
+
+<img width="1450" height="655" alt="Screenshot 2026-10-04 162346" src="https://github.com/user-attachments/assets/07013f0c-08fc-4736-a1b0-85263400ba0e" />
+<img width="1357" height="591" alt="Screenshot 2026-10-04 162357" src="https://github.com/user-attachments/assets/821dd22f-40a7-4a18-b724-9aad9be511be" />
+
+
 ## Architecture
 
 ```text
