@@ -246,16 +246,7 @@ stream().content()
 
 Be able to explain every sentence before adding it to your resume.
 
-## Suggested resume project entry
 
-**AI-Powered Help Desk Assistant | Java, Spring Boot, Spring AI, OpenAI, RAG, PGVector, PostgreSQL, Docker**
-
-- Developed an AI-powered help-desk backend using Spring Boot and Spring AI, exposing REST APIs for conversational support, structured ticket extraction, and streaming responses.
-- Implemented Retrieval-Augmented Generation using OpenAI embeddings, PostgreSQL/PGVector, token-based document chunking, and similarity search to ground responses in internal troubleshooting knowledge.
-- Implemented JDBC-backed conversational memory with conversation IDs and Spring AI advisors to preserve context across multi-turn user sessions.
-- Implemented AI tool calling for ticket lookup, creation, update, and support notifications, integrating model decisions with Spring Data JPA and PostgreSQL.
-
-These bullets describe the intended completed project. Keep a bullet only after you have personally run and understood the feature it describes.
 
 ## Important notes
 
