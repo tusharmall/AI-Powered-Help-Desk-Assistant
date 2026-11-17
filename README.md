@@ -240,12 +240,6 @@ with:
 stream().content()
 ```
 
-## What to say in an interview
-
-> I built an AI-powered help desk assistant using Java, Spring Boot and Spring AI. The application uses ChatClient for model interaction, JDBC-backed conversation memory for multi-turn sessions, PGVector with embeddings for RAG over internal troubleshooting documents, and Spring AI tool calling to let the model look up and modify tickets. I also added structured-output mapping and reactive streaming, and containerized PostgreSQL/PGVector and Mailpit for local development.
-
-Be able to explain every sentence before adding it to your resume.
-
 
 
 ## Important notes
