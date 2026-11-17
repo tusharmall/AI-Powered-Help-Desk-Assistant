@@ -1,6 +1,5 @@
 # AI-Powered Help Desk Assistant
 
-A resume-oriented Java/Spring Boot project that demonstrates the main Spring AI concepts from your learning notes in one coherent application:
 
 - `ChatClient` and fluent prompts
 - OpenAI chat model integration
